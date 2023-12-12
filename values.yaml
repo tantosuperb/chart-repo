@@ -1,3 +1,5 @@
 favorite:
   drink: override-drink
   food: override-food
+test:
+  test1: test1
