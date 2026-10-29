@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["replicaCount", "image"],
+  "properties": {
+    "replicaCount": { "type": "integer", "minimum": 0, "maximum": 3 },
+    "image": {
+      "type": "object",
+      "required": ["repository", "tag"],
+      "properties": {
+        "repository": { "type": "string", "minLength": 1 },
+        "tag": { "type": "string", "minLength": 1 },
+        "pullPolicy": { "type": "string", "enum": ["Always", "IfNotPresent", "Never"] }
+      }
+    },
+    "readiness": {
+      "type": "object",
+      "properties": { "delaySeconds": { "type": "integer", "minimum": 0 } }
+    },
+    "job": {
+      "type": "object",
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "sleepSeconds": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "hook": {
+      "type": "object",
+      "properties": {
+        "preInstallFail": { "type": "boolean" },
+        "postInstallFail": { "type": "boolean" }
+      }
+    },
+    "notes": {
+      "type": "object",
+      "properties": { "repeat": { "type": "integer", "minimum": 0 } }
+    },
+    "secret": {
+      "type": "object",
+      "properties": { "password": { "type": "string" } }
+    }
+  }
+}

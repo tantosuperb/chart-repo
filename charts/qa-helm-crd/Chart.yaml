@@ -1,0 +1,6 @@
+apiVersion: v2
+name: qa-helm-crd
+description: Pipeline Helm 스테이지 QA 용 CRD 차트 (crds/ + 그 CRD 를 쓰는 CR)
+type: application
+version: 0.1.0
+appVersion: "1.0.0"

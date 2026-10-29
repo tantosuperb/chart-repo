@@ -1,0 +1,7 @@
+{{- if eq (int .Values.notes.repeat) 0 -}}
+qa-helm {{ .Chart.Version }} release {{ .Release.Name }} revision {{ .Release.Revision }}
+{{- else -}}
+{{- range until (int .Values.notes.repeat) }}
+{{ repeat 99 "N" }}
+{{- end }}
+{{- end }}

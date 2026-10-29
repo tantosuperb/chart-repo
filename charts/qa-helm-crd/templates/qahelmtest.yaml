@@ -1,0 +1,7 @@
+# --skip-crds 로 설치하면 CRD 가 없어 이 리소스에서 실패한다.
+apiVersion: qahelm.qa.test/v1
+kind: QaHelmTest
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  message: {{ .Values.message | quote }}

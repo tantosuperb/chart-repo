@@ -1,0 +1,26 @@
+# 기본값만으로 배포하면 Deployment 1개가 바로 Ready 된다.
+# 시나리오는 스테이지 values YAML 로 아래 값을 바꿔 만든다.
+
+replicaCount: 1
+
+image:
+  repository: nginx
+  tag: stable-alpine3.17-slim   # 없는 태그를 넣으면 ImagePullBackOff → 자동 롤백 확인
+  pullPolicy: IfNotPresent
+
+readiness:
+  delaySeconds: 0               # 120 이면 완료 대기, Timeout 보다 크게 하면 Timeout 확인
+
+job:
+  enabled: false                # 일반 Job. 완료까지 대기하는지 확인
+  sleepSeconds: 30
+
+hook:
+  preInstallFail: false         # pre-install hook 이 실패 → 본 리소스가 만들어지지 않음
+  postInstallFail: false        # post-install hook 이 실패 → 만든 리소스가 정리되는지 확인
+
+notes:
+  repeat: 0                     # NOTES 출력 크기 조절. 한 줄 = 100 bytes (99자 + 개행)
+
+secret:
+  password: dummy-not-a-real-password   # 비밀값 노출 확인용 더미

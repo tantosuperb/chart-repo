@@ -1,0 +1,6 @@
+apiVersion: v2
+name: qa-helm
+description: Pipeline Helm 스테이지 QA 용 차트 (values 토글로 시나리오 전환)
+type: application
+version: 0.2.0
+appVersion: "1.0.0"

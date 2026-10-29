@@ -62,4 +62,36 @@ entries:
     urls:
     - mychart-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-16T10:15:38.4063826+09:00"
+  qa-helm:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2026-10-29T16:49:09.585486+09:00"
+    description: Pipeline Helm 스테이지 QA 용 차트 (values 토글로 시나리오 전환)
+    digest: de16c87a3f957a207207943f5c12e180e463ce8b224d95a37b64cdbdd1c50624
+    name: qa-helm
+    type: application
+    urls:
+    - qa-helm-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2026-10-29T16:49:09.585337+09:00"
+    description: Pipeline Helm 스테이지 QA 용 차트 (values 토글로 시나리오 전환)
+    digest: 91afbab3be7f518f82ff17c6c5f824e136ef45e8669d80f7d57d1ea51277a5cd
+    name: qa-helm
+    type: application
+    urls:
+    - qa-helm-0.1.0.tgz
+    version: 0.1.0
+  qa-helm-crd:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2026-10-29T16:49:09.585718+09:00"
+    description: Pipeline Helm 스테이지 QA 용 CRD 차트 (crds/ + 그 CRD 를 쓰는 CR)
+    digest: 324f96183c5ba8f88c151f589324bcaef0ede9b4efc19872b3e1a40cb00933ef
+    name: qa-helm-crd
+    type: application
+    urls:
+    - qa-helm-crd-0.1.0.tgz
+    version: 0.1.0
+generated: "2026-10-29T16:49:09.584629+09:00"
